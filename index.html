@@ -216,6 +216,63 @@
       font-weight: bold;
       border: 2px solid #f9c80e;
       box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      /* Events (expand/collapse) */
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+details.event-card {
+  background: #ffffff;
+  border: 2px solid #f9c80e;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+details.event-card summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  list-style: none;
+}
+
+details.event-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.event-meta {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.event-body {
+  margin-top: 14px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.event-poster {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+}
+
+@media (max-width: 768px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+  .event-poster {
+    max-width: 100%;
+  }
+}
     }
   </style>
 </head>
@@ -241,6 +298,7 @@
   <a href="#music">Music</a>
   <a href="#bio">Biography</a>
   <a href="#video">Video</a>
+   <a href="#events">Upcoming Events</a>
   <a href="#booking">Book Me</a>
   <a href="#donate">Donate</a>
   <a href="#contact">Contact</a>
@@ -312,6 +370,42 @@
 
   <section id="video">
     <h2>Video</h2>
+    <section id="events">
+  <h2>Upcoming Events / Performances</h2>
+  <p>
+    Click an event to expand details. Posters, venues, and updates will be added here.
+  </p>
+
+  <div class="events">
+
+    <details class="event-card">
+      <summary>📍 Event Title — City, Country (Date)</summary>
+      <div class="event-meta">
+        <strong>Venue:</strong> Venue Name • <strong>Time:</strong> 7:00 PM • <strong>Entry:</strong> Free / Tickets
+      </div>
+
+      <div class="event-body">
+        <div class="event-grid">
+          <img src="event-1.jpg" alt="Event poster" class="event-poster" />
+
+          <div>
+            <p>
+              Short description of the performance, lineup, or what people should expect.
+            </p>
+
+            <div class="buttons">
+              <a href="https://maps.google.com/?q=Venue+Address" target="_blank" rel="noreferrer">
+                Open Map
+              </a>
+              <a href="#booking" class="alt">Book Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
     <p>Official videos, freestyles, and live performances.</p>
 
     <iframe
