@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rasta-fire.github.io/Rasta-Fire/sitemap.xml
