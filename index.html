@@ -105,11 +105,20 @@
     }
 
     /* Mobile: hide flags */
-    @media (max-width: 768px) {
-      .flag { display: none; }
-      header h1 { font-size: 34px; }
-      .profile-pic { width: 150px; height: 150px; }
-    }
+   @media (max-width: 768px) {
+  .flag {
+    display: block;
+    width: 70px;
+  }
+
+  header h1 { font-size: 32px; }
+  .profile-pic { width: 140px; height: 140px; }
+
+  .header-inner {
+    justify-content: center;
+    gap: 12px;
+  }
+}
 
     /* Reduce motion for accessibility */
     @media (prefers-reduced-motion: reduce) {
