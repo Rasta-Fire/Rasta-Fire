@@ -1,106 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Ustaz Rasta Fire — Official</title>
 
-  <!-- Open Graph -->
+  <!-- Open Graph (WhatsApp / Facebook / LinkedIn previews) -->
   <meta property="og:title" content="Ustaz Rasta Fire — Official" />
   <meta property="og:description" content="Afrobeat — Rasta Fire, the Music Soldier, from Tapari to Kubri Boo. Booking via WhatsApp or email." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourusername.github.io/your-repo/" />
-  <meta property="og:image" content="https://yourusername.github.io/your-repo/preview.jpg" />
+  <meta property="og:url" content="https://rasta-fire.github.io/Rasta-Fire/" />
+  <meta property="og:image" content="https://rasta-fire.github.io/Rasta-Fire/preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Twitter -->
+  <!-- Twitter / X previews -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Ustaz Rasta Fire — Official" />
-  <meta name="twitter:description" content="Afrobeat — The Music Soldier, from Tapari to Kubri Boo." />
-  <meta name="twitter:image" content="https://yourusername.github.io/your-repo/preview.jpg" />
+  <meta name="twitter:description" content="Afrobeat — Rasta Fire, the Music Soldier, from Tapari to Kubri Boo." />
+  <meta name="twitter:image" content="https://rasta-fire.github.io/Rasta-Fire/preview.jpg" />
 
   <style>
-    /* your CSS */
-  </style>
-</head>
+    html { scroll-behavior: smooth; }
 
-  <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #fff7e6;
       color: #111;
-      line-height: 1.6; #disclaimer {
-  background: #fdf3d7;
-  border-top: 4px solid #c8102e;
-  font-size: 14px;
-}
-
-#disclaimer p {
-  color: #333;
-}
+      line-height: 1.6;
     }
-    .header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.center-content {
-  text-align: center;
-}
-
-.flag {
-  width: 120px;
-  height: auto;
-}
-
-.left-flag {
-  margin-right: 20px;
-}
-
-.right-flag {
-  margin-left: 20px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .flag {
-    display: none;
-  }
-}
-    .flag {
-  width: 120px;
-  height: auto;
-  transform-origin: left center;
-  animation: flagWave 2.8s ease-in-out infinite;
-  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
-}
-
-.right-flag {
-  transform-origin: right center;
-  animation: flagWaveRight 2.8s ease-in-out infinite;
-}
-
-@keyframes flagWave {
-  0%   { transform: rotate(0deg) skewY(0deg); }
-  25%  { transform: rotate(-2deg) skewY(2deg); }
-  50%  { transform: rotate(0deg) skewY(-2deg); }
-  75%  { transform: rotate(2deg) skewY(2deg); }
-  100% { transform: rotate(0deg) skewY(0deg); }
-}
-
-@keyframes flagWaveRight {
-  0%   { transform: rotate(0deg) skewY(0deg); }
-  25%  { transform: rotate(2deg) skewY(-2deg); }
-  50%  { transform: rotate(0deg) skewY(2deg); }
-  75%  { transform: rotate(-2deg) skewY(-2deg); }
-  100% { transform: rotate(0deg) skewY(0deg); }
-}
 
     header {
       text-align: center;
@@ -109,13 +39,24 @@
       color: #000;
     }
 
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 16px;
+    }
+
+    .center-content { text-align: center; }
+
     .profile-pic {
       width: 170px;
       height: 170px;
       border-radius: 50%;
       object-fit: cover;
       border: 6px solid #fff;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     header h1 {
@@ -130,10 +71,59 @@
       font-weight: bold;
     }
 
+    /* Flags */
+    .flag {
+      width: 120px;
+      height: auto;
+      filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+    }
+
+    .left-flag {
+      transform-origin: left center;
+      animation: flagWave 2.8s ease-in-out infinite;
+    }
+
+    .right-flag {
+      transform-origin: right center;
+      animation: flagWaveRight 2.8s ease-in-out infinite;
+    }
+
+    @keyframes flagWave {
+      0%   { transform: rotate(0deg) skewY(0deg); }
+      25%  { transform: rotate(-2deg) skewY(2deg); }
+      50%  { transform: rotate(0deg) skewY(-2deg); }
+      75%  { transform: rotate(2deg) skewY(2deg); }
+      100% { transform: rotate(0deg) skewY(0deg); }
+    }
+
+    @keyframes flagWaveRight {
+      0%   { transform: rotate(0deg) skewY(0deg); }
+      25%  { transform: rotate(2deg) skewY(-2deg); }
+      50%  { transform: rotate(0deg) skewY(2deg); }
+      75%  { transform: rotate(-2deg) skewY(-2deg); }
+      100% { transform: rotate(0deg) skewY(0deg); }
+    }
+
+    /* Mobile: hide flags */
+    @media (max-width: 768px) {
+      .flag { display: none; }
+      header h1 { font-size: 34px; }
+      .profile-pic { width: 150px; height: 150px; }
+    }
+
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .left-flag, .right-flag { animation: none !important; }
+    }
+
     nav {
       background: #000;
       text-align: center;
       padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
 
     nav a {
@@ -141,11 +131,13 @@
       text-decoration: none;
       margin: 0 14px;
       font-weight: bold;
+      display: inline-block;
+      padding: 8px 0;
     }
 
     section {
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
       padding: 55px 20px;
       border-bottom: 4px solid #f9c80e;
     }
@@ -155,9 +147,7 @@
       margin-top: 0;
     }
 
-    p {
-      color: #222;
-    }
+    p { color: #222; }
 
     .buttons a {
       display: inline-block;
@@ -170,14 +160,20 @@
       font-weight: bold;
     }
 
-    .buttons a.alt {
-      background: #c8102e;
-    }
+    .buttons a.alt { background: #c8102e; }
 
     iframe {
       margin-top: 20px;
       border-radius: 12px;
     }
+
+    /* Disclaimer styling */
+    #disclaimer {
+      background: #fdf3d7;
+      border-top: 4px solid #c8102e;
+      font-size: 14px;
+    }
+    #disclaimer p { color: #333; }
 
     footer {
       background: #000;
@@ -186,125 +182,152 @@
       padding: 30px 20px;
       font-size: 14px;
     }
+
+    /* Floating Top/Bottom buttons */
+    .float-nav {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
+
+    .float-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: #000;
+      color: #f9c80e;
+      text-decoration: none;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      border: 2px solid #f9c80e;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
   </style>
 </head>
 
 <body>
+  <div id="top"></div>
 
-<header>
-  <div class="header-inner">
+  <header>
+    <div class="header-inner">
+      <img src="south-sudan-flag.png" alt="South Sudan Flag" class="flag left-flag" />
 
-    <img src="south-sudan-flag.png" alt="South Sudan Flag" class="flag left-flag">
+      <div class="center-content">
+        <img src="profile.jpg" alt="Ustaz Rasta Fire" class="profile-pic" />
+        <h1>USTAZ RASTA FIRE</h1>
+        <p>Rasta Fire — The Music Soldier, from Tapari to Kubri Boo</p>
+      </div>
 
-    <div class="center-content">
-      <img src="profile.jpg" alt="Ustaz Rasta Fire" class="profile-pic">
-      <h1>USTAZ RASTA FIRE</h1>
-      <p>Rasta Fire — The Music Soldier, from Tapari to Kubri Boo</p>
+      <img src="south-sudan-flag.png" alt="South Sudan Flag" class="flag right-flag" />
     </div>
+  </header>
 
-    <img src="south-sudan-flag.png" alt="South Sudan Flag" class="flag right-flag">
+  <nav>
+    <a href="#music">Music</a>
+    <a href="#video">Video</a>
+    <a href="#booking">Book Me</a>
+    <a href="#contact">Contact</a>
+    <a href="#disclaimer">Disclaimer</a>
+  </nav>
 
-  </div>
-</header>
+  <section id="music">
+    <h2>Music</h2>
+    <p>
+      Afrobeat from the roots to the future.
+      Music of resistance, rhythm, and fire — from Tapari to Kubri Boo.
+    </p>
 
-<nav>
-  <a href="#music">Music</a>
-  <a href="#video">Video</a>
-  <a href="#booking">Book Me</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <div class="buttons">
+      <a href="https://youtube.com/@ustazrastafire?si=1WXruyrUshsPlrAS" target="_blank" rel="noreferrer">YouTube</a>
+      <a href="https://www.facebook.com/share/1FApXwwcT7/?mibextid=wwXIfr" target="_blank" rel="noreferrer" class="alt">Facebook</a>
+      <a href="https://www.tiktok.com/@rasta.fire73?_r=1&_t=ZM-92kaWyhVOIO" target="_blank" rel="noreferrer">TikTok</a>
+    </div>
+  </section>
 
-<section id="music">
-  <h2>Music</h2>
-  <p>
-    Afrobeat from the roots to the future.  
-    Music of resistance, rhythm, and fire — from Tapari to Kubri Boo.
-  </p>
+  <section id="video">
+    <h2>Video</h2>
+    <p>Official videos, freestyles, and live performances.</p>
 
-  <div class="buttons">
-    <a href="https://youtube.com/@ustazrastafire?si=1WXruyrUshsPlrAS" target="_blank">
-      YouTube
-    </a>
-    <a href="https://www.facebook.com/share/1FApXwwcT7/?mibextid=wwXIfr" target="_blank" class="alt">
-      Facebook
-    </a>
-    <a href="https://www.tiktok.com/@rasta.fire73?_r=1&_t=ZM-92kaWyhVOIO" target="_blank">
-      TikTok
-    </a>
-  </div>
-</section>
+    <iframe
+      src="https://drive.google.com/file/d/1B6Va8aSG9yZs6MTT0kN6J37kapdbAA_V/preview"
+      width="100%"
+      height="360"
+      style="border:0;"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
 
-<section id="video">
-  <h2>Video</h2>
-  <p>Official videos, freestyles, and live performances.</p>
+    <div class="buttons" style="margin-top:16px;">
+      <a class="alt" target="_blank" rel="noreferrer"
+         href="https://drive.google.com/file/d/1B6Va8aSG9yZs6MTT0kN6J37kapdbAA_V/view?usp=sharing">
+        Watch Full Screen
+      </a>
+    </div>
+  </section>
 
-  <iframe
-  src="https://drive.google.com/file/d/1B6Va8aSG9yZs6MTT0kN6J37kapdbAA_V/preview"
-  width="100%"
-  height="360"
-  style="border-radius:12px; border:0;"
-  allow="autoplay; fullscreen"
-  allowfullscreen>
-</iframe>
-</section>
+  <section id="booking">
+    <h2>Book Me for a Show</h2>
+    <p>Available for concerts, festivals, community events, and features.</p>
 
-<section id="booking">
-  <h2>Book Me for a Show</h2>
-  <p>
-    Available for concerts, festivals, community events, and features.
-  </p>
+    <div class="buttons">
+      <a href="mailto:yambio.dy@gmail.com?subject=Booking%20Request%20%E2%80%94%20Ustaz%20Rasta%20Fire">Book via Email</a>
+      <a href="https://wa.me/211929032728?text=Hello%20Ustaz%20Rasta%20Fire,%20I%20would%20like%20to%20book%20you%20for%20a%20show."
+         target="_blank" rel="noreferrer" class="alt">Book via WhatsApp</a>
+    </div>
+  </section>
 
-  <div class="buttons">
-    <a href="mailto:yambio.dy@gmail.com?subject=Booking%20Request%20—%20Ustaz%20Rasta%20Fire">
-      Book via Email
-    </a>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      📧 <strong>Email:</strong> yambio.dy@gmail.com<br />
+      💬 <strong>WhatsApp:</strong> +211 929 032 728
+    </p>
+  </section>
 
-    <a href="https://wa.me/211929032728?text=Hello%20Ustaz%20Rasta%20Fire,%20I%20would%20like%20to%20book%20you%20for%20a%20show."
-       target="_blank"
-       class="alt">
-      Book via WhatsApp
-    </a>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    📧 <strong>Email:</strong> yambio.dy@gmail.com<br>
-    💬 <strong>WhatsApp:</strong> +211 929 032 728
-  </p>
-</section>
   <section id="disclaimer">
-  <h2>Disclaimer</h2>
-  <p>
-    This website is an official platform of Ustaz Rasta Fire.
-    All music, videos, images, and texts are shared for artistic,
-    cultural, and informational purposes only.
-  </p>
-  <p>
-    Content embedded from third-party platforms (including YouTube,
-    Google Drive, Facebook, TikTok, and WhatsApp) is hosted on their
-    respective services and subject to their own terms and policies.
-  </p>
-  <p>
-    Booking requests and communications sent via email or WhatsApp
-    are voluntary and do not create any contractual obligation unless
-    confirmed directly.
-  </p>
-  <p>
-    All creative works remain the intellectual property of
-    Ustaz Rasta Fire unless otherwise stated. Unauthorized reproduction
-    or commercial use without permission is not permitted.
-  </p>
-</section>
+    <h2>Disclaimer</h2>
+    <p>
+      This website is an official platform of Ustaz Rasta Fire.
+      All music, videos, images, and texts are shared for artistic,
+      cultural, and informational purposes only.
+    </p>
+    <p>
+      Content embedded from third-party platforms (including YouTube,
+      Google Drive, Facebook, TikTok, and WhatsApp) is hosted on their
+      respective services and subject to their own terms and policies.
+    </p>
+    <p>
+      Booking requests and communications sent via email or WhatsApp
+      are voluntary and do not create any contractual obligation unless
+      confirmed directly.
+    </p>
+    <p>
+      All creative works remain the intellectual property of
+      Ustaz Rasta Fire unless otherwise stated. Unauthorized reproduction
+      or commercial use without permission is not permitted.
+    </p>
+  </section>
 
-<footer>
-  © <span id="year"></span> Ustaz Rasta Fire — Afrobeat Music Soldier
-</footer>
+  <div id="bottom"></div>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <footer>
+    © <span id="year"></span> Ustaz Rasta Fire — Afrobeat Music Soldier
+  </footer>
 
+  <!-- Floating navigation buttons -->
+  <div class="float-nav">
+    <a href="#top" class="float-btn" aria-label="Back to top">↑</a>
+    <a href="#bottom" class="float-btn" aria-label="Go to bottom">↓</a>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
