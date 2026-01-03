@@ -241,15 +241,17 @@ details.event-card summary::-webkit-details-marker {
   display: none;
 }
 
+/* Hide everything until clicked */
+.event-hidden { display: none; }
+details[open] .event-hidden { display: block; }
+
 .event-meta {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 14px;
   color: #333;
 }
 
-.event-body {
-  margin-top: 14px;
-}
+.event-body { margin-top: 14px; }
 
 .event-grid {
   display: grid;
@@ -266,12 +268,8 @@ details.event-card summary::-webkit-details-marker {
 }
 
 @media (max-width: 768px) {
-  .event-grid {
-    grid-template-columns: 1fr;
-  }
-  .event-poster {
-    max-width: 100%;
-  }
+  .event-grid { grid-template-columns: 1fr; }
+  .event-poster { max-width: 100%; }
 }
     }
   </style>
@@ -372,32 +370,41 @@ details.event-card summary::-webkit-details-marker {
     <h2>Video</h2>
     <section id="events">
   <h2>Upcoming Events / Performances</h2>
-  <p>
-    Click an event to expand details. Posters, venues, and updates will be added here.
-  </p>
+  <p>Click an event to expand details. Posters, venues, and updates will be added here.</p>
 
   <div class="events">
 
     <details class="event-card">
-      <summary>📍 Event Title — City, Country (Date)</summary>
-      <div class="event-meta">
-        <strong>Venue:</strong> Venue Name • <strong>Time:</strong> 7:00 PM • <strong>Entry:</strong> Free / Tickets
-      </div>
+      <summary>
+        📍 Man of Integrity Presents — 14 Years Anniversary (07 Feb 2026)
+      </summary>
 
-      <div class="event-body">
-        <div class="event-grid">
-          <img src="event-1.jpg" alt="Event poster" class="event-poster" />
+      <div class="event-hidden">
+        <div class="event-meta">
+          <strong>Venue:</strong> M7 TONIGHT BAR — Juba, South Sudan •
+          <strong>Date:</strong> 07 February 2026 •
+          <strong>Entry:</strong> Tickets
+        </div>
 
-          <div>
-            <p>
-              Short description of the performance, lineup, or what people should expect.
-            </p>
+        <div class="event-body">
+          <div class="event-grid">
+            <img src="event-m7-juba.jpg" alt="M7 Tonight Bar event poster" class="event-poster" />
 
-            <div class="buttons">
-              <a href="https://maps.google.com/?q=Venue+Address" target="_blank" rel="noreferrer">
-                Open Map
-              </a>
-              <a href="#booking" class="alt">Book Me</a>
+            <div>
+              <p>
+                <strong>Tickets:</strong><br>
+                • Regular: 25,000 SSP<br>
+                • VIP: 40,000 SSP<br>
+                • Table of 4: 100 USD (with JD bottle)
+              </p>
+
+              <div class="buttons">
+                <a href="https://maps.google.com/?q=M7%20TONIGHT%20BAR%20JUBA%20SOUTH%20SUDAN"
+                   target="_blank" rel="noreferrer">
+                  Open Map
+                </a>
+                <a href="#booking" class="alt">Book Me</a>
+              </div>
             </div>
           </div>
         </div>
