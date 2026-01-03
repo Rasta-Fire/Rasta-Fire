@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ustaz Rasta Fire — Official</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff7e6;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #c8102e, #f9c80e, #009e60);
+      color: #000;
+    }
+
+    .profile-pic {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #fff;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    nav {
+      background: #000;
+      text-align: center;
+      padding: 14px;
+    }
+
+    nav a {
+      color: #f9c80e;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 55px 20px;
+      border-bottom: 4px solid #f9c80e;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 0;
+    }
+
+    p {
+      color: #222;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 12px 12px 0 0;
+      padding: 14px 26px;
+      background: #009e60;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .buttons a.alt {
+      background: #c8102e;
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: #000;
+      color: #f9c80e;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="profile.jpg" alt="Ustaz Rasta Fire" class="profile-pic">
+  <h1>USTAZ RASTA FIRE</h1>
+  <p>Rasta Fire — The Music Soldier, from Tapari to Kubri Boo</p>
+</header>
+
+<nav>
+  <a href="#music">Music</a>
+  <a href="#video">Video</a>
+  <a href="#booking">Book Me</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="music">
+  <h2>Music</h2>
+  <p>
+    Afrobeat from the roots to the future.  
+    Music of resistance, rhythm, and fire — from Tapari to Kubri Boo.
+  </p>
+
+  <div class="buttons">
+    <a href="https://youtube.com/@ustazrastafire?si=1WXruyrUshsPlrAS" target="_blank">
+      YouTube
+    </a>
+    <a href="https://www.facebook.com/share/1FApXwwcT7/?mibextid=wwXIfr" target="_blank" class="alt">
+      Facebook
+    </a>
+    <a href="https://www.tiktok.com/@rasta.fire73?_r=1&_t=ZM-92kaWyhVOIO" target="_blank">
+      TikTok
+    </a>
+  </div>
+</section>
+
+<section id="video">
+  <h2>Video</h2>
+  <p>Official videos, freestyles, and live performances.</p>
+
+  <iframe width="100%" height="360"
+    src="https://www.youtube.com/embed?listType=user_uploads&list=ustazrastafire"
+    title="Ustaz Rasta Fire Videos"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</section>
+
+<section id="booking">
+  <h2>Book Me for a Show</h2>
+  <p>
+    Available for concerts, festivals, community events, and features.
+  </p>
+
+  <div class="buttons">
+    <a href="mailto:yambio.dy@gmail.com?subject=Booking%20Request%20—%20Ustaz%20Rasta%20Fire">
+      Book via Email
+    </a>
+
+    <a href="https://wa.me/211929032728?text=Hello%20Ustaz%20Rasta%20Fire,%20I%20would%20like%20to%20book%20you%20for%20a%20show."
+       target="_blank"
+       class="alt">
+      Book via WhatsApp
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    📧 <strong>Email:</strong> yambio.dy@gmail.com<br>
+    💬 <strong>WhatsApp:</strong> +211 929 032 728
+  </p>
+</section>
+
+<footer>
+  © <span id="year"></span> Ustaz Rasta Fire — Afrobeat Music Soldier
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
