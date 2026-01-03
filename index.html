@@ -42,6 +42,65 @@
   color: #333;
 }
     }
+    .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.center-content {
+  text-align: center;
+}
+
+.flag {
+  width: 120px;
+  height: auto;
+}
+
+.left-flag {
+  margin-right: 20px;
+}
+
+.right-flag {
+  margin-left: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .flag {
+    display: none;
+  }
+}
+    .flag {
+  width: 120px;
+  height: auto;
+  transform-origin: left center;
+  animation: flagWave 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+}
+
+.right-flag {
+  transform-origin: right center;
+  animation: flagWaveRight 2.8s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+  0%   { transform: rotate(0deg) skewY(0deg); }
+  25%  { transform: rotate(-2deg) skewY(2deg); }
+  50%  { transform: rotate(0deg) skewY(-2deg); }
+  75%  { transform: rotate(2deg) skewY(2deg); }
+  100% { transform: rotate(0deg) skewY(0deg); }
+}
+
+@keyframes flagWaveRight {
+  0%   { transform: rotate(0deg) skewY(0deg); }
+  25%  { transform: rotate(2deg) skewY(-2deg); }
+  50%  { transform: rotate(0deg) skewY(2deg); }
+  75%  { transform: rotate(-2deg) skewY(-2deg); }
+  100% { transform: rotate(0deg) skewY(0deg); }
+}
 
     header {
       text-align: center;
@@ -133,9 +192,19 @@
 <body>
 
 <header>
-  <img src="profile.jpg" alt="Ustaz Rasta Fire" class="profile-pic">
-  <h1>USTAZ RASTA FIRE</h1>
-  <p>Rasta Fire — The Music Soldier, from Tapari to Kubri Boo</p>
+  <div class="header-inner">
+
+    <img src="south-sudan-flag.png" alt="South Sudan Flag" class="flag left-flag">
+
+    <div class="center-content">
+      <img src="profile.jpg" alt="Ustaz Rasta Fire" class="profile-pic">
+      <h1>USTAZ RASTA FIRE</h1>
+      <p>Rasta Fire — The Music Soldier, from Tapari to Kubri Boo</p>
+    </div>
+
+    <img src="south-sudan-flag.png" alt="South Sudan Flag" class="flag right-flag">
+
+  </div>
 </header>
 
 <nav>
