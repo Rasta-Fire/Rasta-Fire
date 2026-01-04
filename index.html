@@ -170,7 +170,96 @@
       border-radius: 30px;
       font-weight: bold;
     }
+    /* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.gallery-item {
+  margin: 0;
+  background: #fff;
+  border: 2px solid #f9c80e;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-cap {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.gallery-dl {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  background: #009e60;
+  color: #fff;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-img { height: 240px; }
+}
     .buttons a.alt { background: #c8102e; }
+    /* Blog */
+.blog-list { display: flex; flex-direction: column; gap: 14px; }
+
+.blog-post {
+  background: #fff;
+  border: 2px solid #f9c80e;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.blog-post summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  list-style: none;
+}
+
+.blog-post summary::-webkit-details-marker { display: none; }
+
+.blog-meta { margin-top: 8px; font-size: 14px; color: #333; }
+
+.blog-cover {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+  margin-top: 12px;
+}
+
+.blog-body { margin-top: 12px; }
+
+.blog-loading {
+  background: #fff;
+  border: 2px dashed #f9c80e;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
 
     iframe {
       margin-top: 20px;
@@ -303,6 +392,7 @@
   <a href="#music">Music</a>
   <a href="#bio">Biography</a>
   <a href="#video">Video</a>
+   <a href="#gallery">Gallery</a>
    <a href="#events">Upcoming Events</a>
   <a href="#booking">Book Me</a>
   <a href="#donate">Donate</a>
@@ -372,7 +462,14 @@
     already accounted for.
   </p>
 </section>
+<section id="blog">
+  <h2>Blog / Updates</h2>
+  <p>News, reflections, releases, and announcements.</p>
 
+  <div id="blogContainer" class="blog-loading">
+    Loading posts…
+  </div>
+</section>
   <section id="video">
     <h2>Video</h2>
     <p>Official videos, freestyles, and live performances.</p>
@@ -392,6 +489,21 @@
       </a>
     </div>
   </section>
+  <section id="gallery">
+  <h2>Photo Gallery</h2>
+  <p>
+    Press and promotional photos. Click an album to open and download images.
+  </p>
+
+  <div class="buttons">
+    <a href="#gallery-press" class="alt">Press Photos (Download)</a>
+    <a href="#gallery-live">Live / Performance</a>
+  </div>
+
+  <p style="margin-top:16px; font-size:14px; color:#333;">
+    Tip: For press use, please credit “Ustaz Rasta Fire” (and photographer if stated).
+  </p>
+</section>
   <section id="events">
   <h2>Upcoming Events / Performances</h2>
   <p>Click an event to open details.</p>
@@ -441,6 +553,74 @@
           <a href="#booking" class="alt">Book Me</a>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+  <div id="gallery-press" class="modal">
+  <div class="modal-card">
+    <a href="#gallery" class="modal-close">Close ✕</a>
+
+    <h2 style="margin-top:14px;">Press Photos</h2>
+    <p>
+      Download high-quality images for posters, media, and promotion.
+    </p>
+
+    <div class="buttons" style="margin-bottom:14px;">
+      <a class="alt" href="downloads/RastaFire-PressPhotos.zip" download>
+        Download Press Pack (ZIP)
+      </a>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="gallery/rasta-press-01.jpg" alt="Ustaz Rasta Fire — press photo 1" class="gallery-img" loading="lazy">
+        <figcaption class="gallery-cap">
+          Press Photo 01
+          <a href="gallery/rasta-press-01.jpg" download class="gallery-dl">Download</a>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="gallery/rasta-press-02.jpg" alt="Ustaz Rasta Fire — press photo 2" class="gallery-img" loading="lazy">
+        <figcaption class="gallery-cap">
+          Press Photo 02
+          <a href="gallery/rasta-press-02.jpg" download class="gallery-dl">Download</a>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="gallery/rasta-press-03.jpg" alt="Ustaz Rasta Fire — press photo 3" class="gallery-img" loading="lazy">
+        <figcaption class="gallery-cap">
+          Press Photo 03
+          <a href="gallery/rasta-press-03.jpg" download class="gallery-dl">Download</a>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+  <div id="gallery-live" class="modal">
+  <div class="modal-card">
+    <a href="#gallery" class="modal-close">Close ✕</a>
+
+    <h2 style="margin-top:14px;">Live / Performance</h2>
+    <p>Photos from shows, rehearsals, and community events.</p>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="gallery/rasta-live-01.jpg" alt="Ustaz Rasta Fire — live photo 1" class="gallery-img" loading="lazy">
+        <figcaption class="gallery-cap">
+          Live Photo 01
+          <a href="gallery/rasta-live-01.jpg" download class="gallery-dl">Download</a>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="gallery/rasta-live-02.jpg" alt="Ustaz Rasta Fire — live photo 2" class="gallery-img" loading="lazy">
+        <figcaption class="gallery-cap">
+          Live Photo 02
+          <a href="gallery/rasta-live-02.jpg" download class="gallery-dl">Download</a>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </div>
@@ -562,7 +742,107 @@
   </div>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  // Auto-update footer year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ===== BLOG (Sanity) CONFIG =====
+  const SANITY_PROJECT_ID = "YOUR_PROJECT_ID"; // <-- replace
+  const SANITY_DATASET = "production";         // <-- replace if different
+
+  // Pull latest posts. Assumes a schema type "post" with:
+  // title (string), publishedAt (datetime), excerpt (string optional),
+  // coverImage (image optional), body (Portable Text)
+  const query = `*[_type=="post" && defined(publishedAt)]|order(publishedAt desc)[0...20]{
+    title,
+    publishedAt,
+    excerpt,
+    "coverUrl": coverImage.asset->url,
+    body
+  }`;
+
+  const endpoint =
+    `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v2025-10-02/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`;
+
+  function formatDate(iso) {
+    if (!iso) return "";
+    try {
+      return new Date(iso).toLocaleDateString(undefined, {
+        year: "numeric", month: "long", day: "numeric"
+      });
+    } catch {
+      return iso;
+    }
+  }
+
+  // Convert Sanity Portable Text blocks into readable plain text.
+  function textFromPortableText(body) {
+    if (!Array.isArray(body)) return "";
+    return body
+      .map(block => {
+        if (!block || block._type !== "block" || !Array.isArray(block.children)) return "";
+        return block.children.map(ch => ch.text || "").join("");
+      })
+      .filter(Boolean)
+      .join("\n\n")
+      .trim();
+  }
+
+  function escapeHtml(str) {
+    return String(str || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  async function loadBlog() {
+    const wrap = document.getElementById("blogContainer");
+    if (!wrap) return;
+
+    wrap.className = "blog-loading";
+    wrap.textContent = "Loading posts…";
+
+    try {
+      const res = await fetch(endpoint, { cache: "no-store" });
+      const data = await res.json();
+
+      const posts = (data && data.result) ? data.result : [];
+      if (!posts.length) {
+        wrap.className = "blog-loading";
+        wrap.textContent = "No posts yet.";
+        return;
+      }
+
+      wrap.className = "blog-list";
+      wrap.innerHTML = posts.map((p) => {
+        const title = escapeHtml(p.title || "Untitled");
+        const date = formatDate(p.publishedAt);
+        const excerpt = escapeHtml(p.excerpt || "");
+        const bodyText = escapeHtml(textFromPortableText(p.body));
+        const cover = p.coverUrl
+          ? `<img class="blog-cover" src="${escapeHtml(p.coverUrl)}" alt="Post image">`
+          : "";
+
+        return `
+          <details class="blog-post">
+            <summary>${title}</summary>
+            <div class="blog-meta">${escapeHtml(date)}${excerpt ? " • " + excerpt : ""}</div>
+            ${cover}
+            <div class="blog-body">
+              <p style="white-space:pre-wrap;margin:12px 0 0;">${bodyText}</p>
+            </div>
+          </details>
+        `;
+      }).join("");
+    } catch (e) {
+      wrap.className = "blog-loading";
+      wrap.textContent = "Could not load posts right now.";
+    }
+  }
+
+  loadBlog();
+</script>
 </body>
 </html>
