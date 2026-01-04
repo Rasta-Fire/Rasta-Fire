@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ustaz Rasta Fire is a South Sudanese Afrobeat artist, known as the Music Soldier from Tapari to Kubri Boo. Music, videos, events, and booking information." />
+  <meta name="description" content="Ustaz Rasta Fire is a South Sudanese Afrobeat artist, known as the Music Soldier from Tapari to Kubri Boo. Music, videos, events, gallery, and booking information." />
 
   <title>Ustaz Rasta Fire — Official</title>
 
@@ -105,21 +105,13 @@
       100% { transform: rotate(0deg) skewY(0deg); }
     }
 
-    /* Mobile: hide flags */
-   @media (max-width: 768px) {
-  .flag {
-    display: block;
-    width: 70px;
-  }
-
-  header h1 { font-size: 32px; }
-  .profile-pic { width: 140px; height: 140px; }
-
-  .header-inner {
-    justify-content: center;
-    gap: 12px;
-  }
-}
+    /* Mobile: adjust header */
+    @media (max-width: 768px) {
+      .flag { display: block; width: 70px; }
+      header h1 { font-size: 32px; }
+      .profile-pic { width: 140px; height: 140px; }
+      .header-inner { justify-content: center; gap: 12px; }
+    }
 
     /* Reduce motion for accessibility */
     @media (prefers-reduced-motion: reduce) {
@@ -151,7 +143,9 @@
       padding: 55px 20px;
       border-bottom: 4px solid #f9c80e;
     }
-    #events { scroll-margin-top: 90px; }
+
+    /* Smooth anchor offsets (sticky nav) */
+    #blog, #gallery, #events, #donate, #booking, #contact, #disclaimer { scroll-margin-top: 90px; }
 
     h2 {
       font-size: 28px;
@@ -170,101 +164,10 @@
       border-radius: 30px;
       font-weight: bold;
     }
-    /* Gallery */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
-}
 
-.gallery-item {
-  margin: 0;
-  background: #fff;
-  border: 2px solid #f9c80e;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.gallery-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-cap {
-  padding: 10px 12px;
-  font-size: 14px;
-  color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.gallery-dl {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  background: #009e60;
-  color: #fff;
-  white-space: nowrap;
-}
-
-@media (max-width: 900px) {
-  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 600px) {
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-img { height: 240px; }
-}
     .buttons a.alt { background: #c8102e; }
-    /* Blog */
-.blog-list { display: flex; flex-direction: column; gap: 14px; }
 
-.blog-post {
-  background: #fff;
-  border: 2px solid #f9c80e;
-  border-radius: 14px;
-  padding: 14px 16px;
-}
-
-.blog-post summary {
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  list-style: none;
-}
-
-.blog-post summary::-webkit-details-marker { display: none; }
-
-.blog-meta { margin-top: 8px; font-size: 14px; color: #333; }
-
-.blog-cover {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
-  border: 2px solid #eee;
-  margin-top: 12px;
-}
-
-.blog-body { margin-top: 12px; }
-
-.blog-loading {
-  background: #fff;
-  border: 2px dashed #f9c80e;
-  border-radius: 14px;
-  padding: 14px 16px;
-}
-
-    iframe {
-      margin-top: 20px;
-      border-radius: 12px;
-    }
+    iframe { margin-top: 20px; border-radius: 12px; }
 
     /* Disclaimer styling */
     #disclaimer {
@@ -294,81 +197,230 @@
     }
 
     .float-btn {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  background: #000;
-  color: #f9c80e;
-  text-decoration: none;
-  display: grid;
-  place-items: center;
-  font-size: 22px;
-  font-weight: bold;
-  border: 2px solid #f9c80e;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
-}
-    /* Modal (popup) for events */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  display: none;
-  z-index: 10000;
-  padding: 22px;
-  overflow: auto;
-}
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: #000;
+      color: #f9c80e;
+      text-decoration: none;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      border: 2px solid #f9c80e;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
 
-.modal:target {
-  display: block;
-}
-/* Imprint profile image (inside modal) */
-.imprint-profile {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #f9c80e;
-  margin: 10px auto 18px;
-  display: block;
-}
-.modal-card {
-  background: #fff;
-  max-width: 900px;
-  margin: 60px auto;
-  border-radius: 16px;
-  padding: 18px;
-  border: 3px solid #f9c80e;
-}
+    /* ===== BLOG (expand/collapse) ===== */
+    .blog-list { display: flex; flex-direction: column; gap: 14px; }
 
-.modal-close {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 999px;
-  padding: 10px 14px;
-  border: 2px solid #000;
-  color: #000;
-  background: #f9c80e;
-}
+    .blog-post {
+      background: #fff;
+      border: 2px solid #f9c80e;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
 
-.modal-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 16px;
-  margin-top: 14px;
-}
+    .blog-post summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      list-style: none;
+    }
 
-.modal-poster {
-  width: 100%;
-  border-radius: 12px;
-  border: 2px solid #eee;
-}
+    .blog-post summary::-webkit-details-marker { display: none; }
 
-@media (max-width: 768px) {
-  .modal-card { margin: 30px auto; }
-  .modal-grid { grid-template-columns: 1fr; }
-}
-</style>
+    .blog-meta { margin-top: 8px; font-size: 14px; color: #333; }
+
+    .blog-cover {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      border: 2px solid #eee;
+      margin-top: 12px;
+    }
+
+    .blog-body { margin-top: 12px; }
+
+    .blog-loading {
+      background: #fff;
+      border: 2px dashed #f9c80e;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .gallery-item {
+      margin: 0;
+      background: #fff;
+      border: 2px solid #f9c80e;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-cap {
+      padding: 10px 12px;
+      font-size: 14px;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .gallery-dl {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      background: #009e60;
+      color: #fff;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-img { height: 240px; }
+    }
+
+    /* ===== MODALS (Events, Gallery, Imprint) ===== */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: none;
+      z-index: 10000;
+      padding: 22px;
+      overflow: auto;
+    }
+
+    .modal:target { display: block; }
+
+    .modal-card {
+      background: #fff;
+      max-width: 900px;
+      margin: 60px auto;
+      border-radius: 16px;
+      padding: 18px;
+      border: 3px solid #f9c80e;
+    }
+
+    .modal-close {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 2px solid #000;
+      color: #000;
+      background: #f9c80e;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .modal-poster {
+      width: 100%;
+      border-radius: 12px;
+      border: 2px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .modal-card { margin: 30px auto; }
+      .modal-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Imprint profile image (inside modal) */
+    .imprint-profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #f9c80e;
+      margin: 10px auto 18px;
+      display: block;
+    }
+
+    /* ===== FIRE RING AROUND PROFILE PICTURE ===== */
+    .profile-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-wrap img.profile-pic {
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #ff2400, #ff6a00, #ffd000, #ff2400);
+      animation: fireSpin 6s linear infinite;
+
+      -webkit-mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - 22px),
+        #000 calc(100% - 21px)
+      );
+      mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - 22px),
+        #000 calc(100% - 21px)
+      );
+    }
+
+    .profile-wrap::after {
+      content: "";
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      background: conic-gradient(#ff2400, #ff6a00, #ffd000);
+      filter: blur(12px);
+      opacity: 0.7;
+      animation: firePulse 3s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    @keyframes fireSpin { 100% { transform: rotate(360deg); } }
+
+    @keyframes firePulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.9; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile-wrap::before,
+      .profile-wrap::after {
+        animation: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -379,7 +431,9 @@
       <img src="south-sudan-flag.png" alt="South Sudan Flag" class="flag left-flag" />
 
       <div class="center-content">
-        <img src="profile.jpg" alt="Ustaz Rasta Fire" class="profile-pic" />
+        <div class="profile-wrap">
+          <img src="profile.jpg" alt="Ustaz Rasta Fire" class="profile-pic" />
+        </div>
         <h1>USTAZ RASTA FIRE</h1>
         <p>Rasta Fire — The Music Soldier, from Tapari to Kubri Boo</p>
       </div>
@@ -388,18 +442,19 @@
     </div>
   </header>
 
- <nav>
-  <a href="#music">Music</a>
-  <a href="#bio">Biography</a>
-  <a href="#video">Video</a>
-   <a href="#gallery">Gallery</a>
-   <a href="#events">Upcoming Events</a>
-  <a href="#booking">Book Me</a>
-  <a href="#donate">Donate</a>
-  <a href="#contact">Contact</a>
-  <a href="#disclaimer">Disclaimer</a>
-   <a href="#imprint">Imprint</a>
-</nav>
+  <nav>
+    <a href="#music">Music</a>
+    <a href="#bio">Biography</a>
+    <a href="#blog">Blog</a>
+    <a href="#video">Video</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#events">Upcoming Events</a>
+    <a href="#booking">Book Me</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+    <a href="#disclaimer">Disclaimer</a>
+    <a href="#imprint">Imprint</a>
+  </nav>
 
   <section id="music">
     <h2>Music</h2>
@@ -414,65 +469,69 @@
       <a href="https://www.tiktok.com/@rasta.fire73?_r=1&_t=ZM-92kaWyhVOIO" target="_blank" rel="noreferrer">TikTok</a>
     </div>
   </section>
+
   <section id="bio">
-  <h2>Biography</h2>
+    <h2>Biography</h2>
 
-  <p>
-    Born in 1993 as <strong>Muberenga Martin Dominic Kpoku</strong>, and
-    known artistically as <strong>Rasta Fire — the Music Soldier from
-    Tapari to Kubri Boo</strong>, he is a Zande artist from Tambura,
-    one of the states of South Sudan. Like many others of his generation,
-    he grew up in displacement camps, shaped by instability, movement,
-    and survival.
-  </p>
+    <p>
+      Born in 1993 as <strong>Muberenga Martin Dominic Kpoku</strong>, and
+      known artistically as <strong>Rasta Fire — the Music Soldier from
+      Tapari to Kubri Boo</strong>, he is a Zande artist from Tambura,
+      one of the states of South Sudan. Like many others of his generation,
+      he grew up in displacement camps, shaped by instability, movement,
+      and survival.
+    </p>
 
-  <p>
-    He began practising music in the early 2013s and has since used it
-    as a tool to confront social injustice, failed leadership, lack of
-    education, and deep-rooted societal challenges. His music moves
-    between resistance and intimacy: love songs, mourning songs,
-    motivational pieces, and political expression, sung primarily in
-    <strong>Pazande</strong>, the language of his people.
-  </p>
+    <p>
+      He began practising music in the early 2010s and has since used it
+      as a tool to confront social injustice, failed leadership, lack of
+      education, and deep-rooted societal challenges. His music moves
+      between resistance and intimacy: love songs, mourning songs,
+      motivational pieces, and political expression, sung primarily in
+      <strong>Pazande</strong>, the language of his people.
+    </p>
 
-  <p>
-    Rasta Fire has performed across multiple states in South Sudan and
-    in parts of East Africa, where his work continues to gain recognition.
-    In 2025, he became a national cultural icon within the Azande
-    community following the release of his uncompromising song
-    <strong>“Gbudue Tee.”</strong> In this work, he names crimes as crimes,
-    challenges political leaders, questions electoral manipulation,
-    and condemns the cycle of promises made only to be abandoned after
-    votes are secured.
-  </p>
+    <p>
+      Rasta Fire has performed across multiple states in South Sudan and
+      in parts of East Africa, where his work continues to gain recognition.
+      In 2025, he became a national cultural icon within the Azande
+      community following the release of his uncompromising song
+      <strong>“Gbudue Tee.”</strong> In this work, he names crimes as crimes,
+      challenges political leaders, questions electoral manipulation,
+      and condemns the cycle of promises made only to be abandoned after
+      votes are secured.
+    </p>
 
-  <p>
-    Through the song, he addresses the tense ethnic conflicts in
-    Western Equatoria, openly naming responsibility and calling on
-    individuals to reflect on their moral duty toward peace and
-    collective survival. He situates these struggles within the wider
-    failures of governance in South Sudan, insisting that the people
-    have bled enough — trapped in insecurity that leaves no space for
-    farming, education, or dignity.
-  </p>
+    <p>
+      Through the song, he addresses the tense ethnic conflicts in
+      Western Equatoria, openly naming responsibility and calling on
+      individuals to reflect on their moral duty toward peace and
+      collective survival. He situates these struggles within the wider
+      failures of governance in South Sudan, insisting that the people
+      have bled enough — trapped in insecurity that leaves no space for
+      farming, education, or dignity.
+    </p>
 
-  <p>
-    Rasta Fire makes no claim to power. He states plainly that if
-    speaking the truth places his life at risk, then that risk is
-    already accounted for.
-  </p>
-</section>
-<section id="blog">
-  <h2>Blog / Updates</h2>
-  <p>News, reflections, releases, and announcements.</p>
+    <p>
+      Rasta Fire makes no claim to power. He states plainly that if
+      speaking the truth places his life at risk, then that risk is
+      already accounted for.
+    </p>
+  </section>
 
-  <div id="blogContainer" class="blog-loading">
-    Loading posts…
-  </div>
-</section>
+  <section id="blog">
+    <h2>Blog / Updates</h2>
+    <p>News, reflections, releases, and announcements.</p>
+
+    <div id="blogContainer" class="blog-loading">
+      Loading posts…
+    </div>
+  </section>
+
   <section id="video">
     <h2>Video</h2>
     <p>Official videos, freestyles, and live performances.</p>
+
     <iframe
       src="https://drive.google.com/file/d/1B6Va8aSG9yZs6MTT0kN6J37kapdbAA_V/preview"
       width="100%"
@@ -489,203 +548,204 @@
       </a>
     </div>
   </section>
+
   <section id="gallery">
-  <h2>Photo Gallery</h2>
-  <p>
-    Press and promotional photos. Click an album to open and download images.
-  </p>
-
-  <div class="buttons">
-    <a href="#gallery-press" class="alt">Press Photos (Download)</a>
-    <a href="#gallery-live">Live / Performance</a>
-  </div>
-
-  <p style="margin-top:16px; font-size:14px; color:#333;">
-    Tip: For press use, please credit “Ustaz Rasta Fire” (and photographer if stated).
-  </p>
-</section>
-  <section id="events">
-  <h2>Upcoming Events / Performances</h2>
-  <p>Click an event to open details.</p>
-
-  <div class="buttons">
-    <a href="#event-m7" class="alt">
-      Man of Integrity Presents — 14 Years Anniversary (07 Feb 2026)
-    </a>
-  </div>
-    
-</section>
-
-<div id="event-m7" class="modal">
-  <div class="modal-card">
-    <a href="#events" class="modal-close">Close ✕</a>
-
-    <h2 style="margin-top:14px;">
-      Man of Integrity Presents — 14 Years Anniversary
-    </h2>
-
+    <h2>Photo Gallery</h2>
     <p>
-      <strong>Venue:</strong> M7 TONIGHT BAR — Juba, South Sudan<br>
-      <strong>Date:</strong> 07 February 2026<br>
-      <strong>Entry:</strong> Tickets
+      Press and promotional photos. Click an album to open and download images.
     </p>
 
-    <div class="modal-grid">
-      <img src="event-m7-juba.jpg"
-           alt="M7 Tonight Bar event poster"
-           class="modal-poster" />
+    <div class="buttons">
+      <a href="#gallery-press" class="alt">Press Photos (Download)</a>
+      <a href="#gallery-live">Live / Performance</a>
+    </div>
 
-      <div>
-        <p>
-          <strong>Ticket Prices:</strong><br>
-          • Regular: 25,000 SSP<br>
-          • VIP: 40,000 SSP<br>
-          • Table of 4: 100 USD (with JD bottle)
-        </p>
+    <p style="margin-top:16px; font-size:14px; color:#333;">
+      Tip: For press use, please credit “Ustaz Rasta Fire” (and photographer if stated).
+    </p>
+  </section>
 
-        <p><strong>Organiser:</strong> Man of Integrity Presents</p>
+  <section id="events">
+    <h2>Upcoming Events / Performances</h2>
+    <p>Click an event to open details.</p>
 
-        <div class="buttons">
-          <a href="https://maps.google.com/?q=M7%20TONIGHT%20BAR%20JUBA%20SOUTH%20SUDAN"
-             target="_blank" rel="noreferrer">
-            Open Map
-          </a>
-          <a href="#booking" class="alt">Book Me</a>
+    <div class="buttons">
+      <a href="#event-m7" class="alt">
+        Man of Integrity Presents — 14 Years Anniversary (07 Feb 2026)
+      </a>
+    </div>
+  </section>
+
+  <!-- EVENT MODAL -->
+  <div id="event-m7" class="modal">
+    <div class="modal-card">
+      <a href="#events" class="modal-close">Close ✕</a>
+
+      <h2 style="margin-top:14px;">Man of Integrity Presents — 14 Years Anniversary</h2>
+
+      <p>
+        <strong>Venue:</strong> M7 TONIGHT BAR — Juba, South Sudan<br>
+        <strong>Date:</strong> 07 February 2026<br>
+        <strong>Entry:</strong> Tickets
+      </p>
+
+      <div class="modal-grid">
+        <img src="event-m7-juba.jpg" alt="M7 Tonight Bar event poster" class="modal-poster" />
+
+        <div>
+          <p>
+            <strong>Ticket Prices:</strong><br>
+            • Regular: 25,000 SSP<br>
+            • VIP: 40,000 SSP<br>
+            • Table of 4: 100 USD (with JD bottle)
+          </p>
+
+          <p><strong>Organiser:</strong> Man of Integrity Presents</p>
+
+          <div class="buttons">
+            <a href="https://maps.google.com/?q=M7%20TONIGHT%20BAR%20JUBA%20SOUTH%20SUDAN"
+               target="_blank" rel="noreferrer">
+              Open Map
+            </a>
+            <a href="#booking" class="alt">Book Me</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!-- GALLERY: PRESS MODAL -->
   <div id="gallery-press" class="modal">
-  <div class="modal-card">
-    <a href="#gallery" class="modal-close">Close ✕</a>
+    <div class="modal-card">
+      <a href="#gallery" class="modal-close">Close ✕</a>
 
-    <h2 style="margin-top:14px;">Press Photos</h2>
-    <p>
-      Download high-quality images for posters, media, and promotion.
-    </p>
+      <h2 style="margin-top:14px;">Press Photos</h2>
+      <p>Download high-quality images for posters, media, and promotion.</p>
 
-    <div class="buttons" style="margin-bottom:14px;">
-      <a class="alt" href="downloads/RastaFire-PressPhotos.zip" download>
-        Download Press Pack (ZIP)
-      </a>
-    </div>
+      <div class="buttons" style="margin-bottom:14px;">
+        <a class="alt" href="downloads/RastaFire-PressPhotos.zip" download>
+          Download Press Pack (ZIP)
+        </a>
+      </div>
 
-    <div class="gallery-grid">
-      <figure class="gallery-item">
-        <img src="gallery/rasta-press-01.jpg" alt="Ustaz Rasta Fire — press photo 1" class="gallery-img" loading="lazy">
-        <figcaption class="gallery-cap">
-          Press Photo 01
-          <a href="gallery/rasta-press-01.jpg" download class="gallery-dl">Download</a>
-        </figcaption>
-      </figure>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="gallery/rasta-press-01.jpg" alt="Ustaz Rasta Fire — press photo 1" class="gallery-img" loading="lazy">
+          <figcaption class="gallery-cap">
+            Press Photo 01
+            <a href="gallery/rasta-press-01.jpg" download class="gallery-dl">Download</a>
+          </figcaption>
+        </figure>
 
-      <figure class="gallery-item">
-        <img src="gallery/rasta-press-02.jpg" alt="Ustaz Rasta Fire — press photo 2" class="gallery-img" loading="lazy">
-        <figcaption class="gallery-cap">
-          Press Photo 02
-          <a href="gallery/rasta-press-02.jpg" download class="gallery-dl">Download</a>
-        </figcaption>
-      </figure>
+        <figure class="gallery-item">
+          <img src="gallery/rasta-press-02.jpg" alt="Ustaz Rasta Fire — press photo 2" class="gallery-img" loading="lazy">
+          <figcaption class="gallery-cap">
+            Press Photo 02
+            <a href="gallery/rasta-press-02.jpg" download class="gallery-dl">Download</a>
+          </figcaption>
+        </figure>
 
-      <figure class="gallery-item">
-        <img src="gallery/rasta-press-03.jpg" alt="Ustaz Rasta Fire — press photo 3" class="gallery-img" loading="lazy">
-        <figcaption class="gallery-cap">
-          Press Photo 03
-          <a href="gallery/rasta-press-03.jpg" download class="gallery-dl">Download</a>
-        </figcaption>
-      </figure>
+        <figure class="gallery-item">
+          <img src="gallery/rasta-press-03.jpg" alt="Ustaz Rasta Fire — press photo 3" class="gallery-img" loading="lazy">
+          <figcaption class="gallery-cap">
+            Press Photo 03
+            <a href="gallery/rasta-press-03.jpg" download class="gallery-dl">Download</a>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- GALLERY: LIVE MODAL -->
   <div id="gallery-live" class="modal">
-  <div class="modal-card">
-    <a href="#gallery" class="modal-close">Close ✕</a>
+    <div class="modal-card">
+      <a href="#gallery" class="modal-close">Close ✕</a>
 
-    <h2 style="margin-top:14px;">Live / Performance</h2>
-    <p>Photos from shows, rehearsals, and community events.</p>
+      <h2 style="margin-top:14px;">Live / Performance</h2>
+      <p>Photos from shows, rehearsals, and community events.</p>
 
-    <div class="gallery-grid">
-      <figure class="gallery-item">
-        <img src="gallery/rasta-live-01.jpg" alt="Ustaz Rasta Fire — live photo 1" class="gallery-img" loading="lazy">
-        <figcaption class="gallery-cap">
-          Live Photo 01
-          <a href="gallery/rasta-live-01.jpg" download class="gallery-dl">Download</a>
-        </figcaption>
-      </figure>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="gallery/rasta-live-01.jpg" alt="Ustaz Rasta Fire — live photo 1" class="gallery-img" loading="lazy">
+          <figcaption class="gallery-cap">
+            Live Photo 01
+            <a href="gallery/rasta-live-01.jpg" download class="gallery-dl">Download</a>
+          </figcaption>
+        </figure>
 
-      <figure class="gallery-item">
-        <img src="gallery/rasta-live-02.jpg" alt="Ustaz Rasta Fire — live photo 2" class="gallery-img" loading="lazy">
-        <figcaption class="gallery-cap">
-          Live Photo 02
-          <a href="gallery/rasta-live-02.jpg" download class="gallery-dl">Download</a>
-        </figcaption>
-      </figure>
+        <figure class="gallery-item">
+          <img src="gallery/rasta-live-02.jpg" alt="Ustaz Rasta Fire — live photo 2" class="gallery-img" loading="lazy">
+          <figcaption class="gallery-cap">
+            Live Photo 02
+            <a href="gallery/rasta-live-02.jpg" download class="gallery-dl">Download</a>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- IMPRINT MODAL -->
-<div id="imprint" class="modal">
-  <div class="modal-card">
-    <a href="#" class="modal-close">Close ✕</a>
+  <!-- IMPRINT MODAL -->
+  <div id="imprint" class="modal">
+    <div class="modal-card">
+      <a href="#" class="modal-close">Close ✕</a>
 
-    <h2 style="margin-top:14px;">Imprint</h2>
+      <h2 style="margin-top:14px;">Imprint</h2>
 
-    <img src="imprint-profile.jpg" alt="David Yambio" class="imprint-profile" />
+      <img src="imprint-profile.jpg" alt="David Yambio" class="imprint-profile" />
 
-    <p><strong>Website Owner:</strong><br>
-      Ustaz Rasta Fire (artistic name)
-    </p>
+      <p><strong>Website Owner:</strong><br>
+        Ustaz Rasta Fire (artistic name)
+      </p>
 
-    <p><strong>Responsible for content:</strong><br>
-      David Yambio
-    </p>
+      <p><strong>Responsible for content:</strong><br>
+        David Yambio
+      </p>
 
-    <p><strong>Contact:</strong><br>
-      Email: yambio.dy@gmail.com
-    </p>
+      <p><strong>Contact:</strong><br>
+        Email: yambio.dy@gmail.com
+      </p>
 
-    <p><strong>Location:</strong><br>
-      Germany
-    </p>
+      <p><strong>Location:</strong><br>
+        Germany
+      </p>
 
-    <p>
-      This website is a non-commercial, informational platform dedicated
-      to the artistic work of Ustaz Rasta Fire.
-    </p>
+      <p>
+        This website is a non-commercial, informational platform dedicated
+        to the artistic work of Ustaz Rasta Fire.
+      </p>
 
-    <p>
-      External links and embedded content are provided for informational
-      purposes. Responsibility for third-party content lies with the
-      respective providers.
-    </p>
+      <p>
+        External links and embedded content are provided for informational
+        purposes. Responsibility for third-party content lies with the
+        respective providers.
+      </p>
+    </div>
   </div>
-</div>
 
   <section id="donate">
-  <h2>Support / Donate</h2>
-  <p>
-    If you wish to support the music, the journey, and the work behind
-    Ustaz Rasta Fire, you can contribute via PayPal.
-  </p>
+    <h2>Support / Donate</h2>
+    <p>
+      If you wish to support the music, the journey, and the work behind
+      Ustaz Rasta Fire, you can contribute via PayPal.
+    </p>
 
-  <p>
-    Donations are handled transparently by David Yambio in support of
-    Rasta Fire’s music and work. This is due to current limitations in
-    accessing PayPal services in South Sudan. Please include the note <strong>“For Rasta Fire”</strong>
-  </p>
+    <p>
+      Donations are handled transparently by David Yambio in support of
+      Rasta Fire’s music and work. This is due to current limitations in
+      accessing PayPal services in South Sudan. Please include the note <strong>“For Rasta Fire”</strong>.
+    </p>
 
-  <div class="buttons">
-    <a
-      href="https://www.paypal.me/yambioD?note=For%20Rasta%20Fire"
-      target="_blank"
-      rel="noreferrer"
-      class="alt">
-      Donate via PayPal
-    </a>
-  </div>
-</section>
+    <div class="buttons">
+      <a
+        href="https://www.paypal.me/yambioD?note=For%20Rasta%20Fire"
+        target="_blank"
+        rel="noreferrer"
+        class="alt">
+        Donate via PayPal
+      </a>
+    </div>
+  </section>
+
   <section id="booking">
     <h2>Book Me for a Show</h2>
     <p>Available for concerts, festivals, community events, and features.</p>
@@ -742,107 +802,105 @@
   </div>
 
   <script>
-  // Auto-update footer year
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+    // Auto-update footer year
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ===== BLOG (Sanity) CONFIG =====
-  const SANITY_PROJECT_ID = "YOUR_PROJECT_ID"; // <-- replace
-  const SANITY_DATASET = "production";         // <-- replace if different
+    // ===== BLOG (Sanity) CONFIG =====
+    const SANITY_PROJECT_ID = "YOUR_PROJECT_ID"; // <-- replace
+    const SANITY_DATASET = "production";         // <-- replace if different
 
-  // Pull latest posts. Assumes a schema type "post" with:
-  // title (string), publishedAt (datetime), excerpt (string optional),
-  // coverImage (image optional), body (Portable Text)
-  const query = `*[_type=="post" && defined(publishedAt)]|order(publishedAt desc)[0...20]{
-    title,
-    publishedAt,
-    excerpt,
-    "coverUrl": coverImage.asset->url,
-    body
-  }`;
+    // Pull latest posts. Assumes a schema type "post" with:
+    // title (string), publishedAt (datetime), excerpt (string optional),
+    // coverImage (image optional), body (Portable Text)
+    const query = `*[_type=="post" && defined(publishedAt)]|order(publishedAt desc)[0...20]{
+      title,
+      publishedAt,
+      excerpt,
+      "coverUrl": coverImage.asset->url,
+      body
+    }`;
 
-  const endpoint =
-    `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v2025-10-02/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`;
+    const endpoint =
+      `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v2025-10-02/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`;
 
-  function formatDate(iso) {
-    if (!iso) return "";
-    try {
-      return new Date(iso).toLocaleDateString(undefined, {
-        year: "numeric", month: "long", day: "numeric"
-      });
-    } catch {
-      return iso;
-    }
-  }
-
-  // Convert Sanity Portable Text blocks into readable plain text.
-  function textFromPortableText(body) {
-    if (!Array.isArray(body)) return "";
-    return body
-      .map(block => {
-        if (!block || block._type !== "block" || !Array.isArray(block.children)) return "";
-        return block.children.map(ch => ch.text || "").join("");
-      })
-      .filter(Boolean)
-      .join("\n\n")
-      .trim();
-  }
-
-  function escapeHtml(str) {
-    return String(str || "")
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  async function loadBlog() {
-    const wrap = document.getElementById("blogContainer");
-    if (!wrap) return;
-
-    wrap.className = "blog-loading";
-    wrap.textContent = "Loading posts…";
-
-    try {
-      const res = await fetch(endpoint, { cache: "no-store" });
-      const data = await res.json();
-
-      const posts = (data && data.result) ? data.result : [];
-      if (!posts.length) {
-        wrap.className = "blog-loading";
-        wrap.textContent = "No posts yet.";
-        return;
+    function formatDate(iso) {
+      if (!iso) return "";
+      try {
+        return new Date(iso).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+      } catch {
+        return iso;
       }
-
-      wrap.className = "blog-list";
-      wrap.innerHTML = posts.map((p) => {
-        const title = escapeHtml(p.title || "Untitled");
-        const date = formatDate(p.publishedAt);
-        const excerpt = escapeHtml(p.excerpt || "");
-        const bodyText = escapeHtml(textFromPortableText(p.body));
-        const cover = p.coverUrl
-          ? `<img class="blog-cover" src="${escapeHtml(p.coverUrl)}" alt="Post image">`
-          : "";
-
-        return `
-          <details class="blog-post">
-            <summary>${title}</summary>
-            <div class="blog-meta">${escapeHtml(date)}${excerpt ? " • " + excerpt : ""}</div>
-            ${cover}
-            <div class="blog-body">
-              <p style="white-space:pre-wrap;margin:12px 0 0;">${bodyText}</p>
-            </div>
-          </details>
-        `;
-      }).join("");
-    } catch (e) {
-      wrap.className = "blog-loading";
-      wrap.textContent = "Could not load posts right now.";
     }
-  }
 
-  loadBlog();
-</script>
+    // Convert Sanity Portable Text blocks into readable plain text.
+    function textFromPortableText(body) {
+      if (!Array.isArray(body)) return "";
+      return body
+        .map(block => {
+          if (!block || block._type !== "block" || !Array.isArray(block.children)) return "";
+          return block.children.map(ch => ch.text || "").join("");
+        })
+        .filter(Boolean)
+        .join("\n\n")
+        .trim();
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function loadBlog() {
+      const wrap = document.getElementById("blogContainer");
+      if (!wrap) return;
+
+      wrap.className = "blog-loading";
+      wrap.textContent = "Loading posts…";
+
+      try {
+        const res = await fetch(endpoint, { cache: "no-store" });
+        const data = await res.json();
+
+        const posts = (data && data.result) ? data.result : [];
+        if (!posts.length) {
+          wrap.className = "blog-loading";
+          wrap.textContent = "No posts yet.";
+          return;
+        }
+
+        wrap.className = "blog-list";
+        wrap.innerHTML = posts.map((p) => {
+          const title = escapeHtml(p.title || "Untitled");
+          const date = formatDate(p.publishedAt);
+          const excerpt = escapeHtml(p.excerpt || "");
+          const bodyText = escapeHtml(textFromPortableText(p.body));
+          const cover = p.coverUrl
+            ? `<img class="blog-cover" src="${escapeHtml(p.coverUrl)}" alt="Post image">`
+            : "";
+
+          return `
+            <details class="blog-post">
+              <summary>${title}</summary>
+              <div class="blog-meta">${escapeHtml(date)}${excerpt ? " • " + excerpt : ""}</div>
+              ${cover}
+              <div class="blog-body">
+                <p style="white-space:pre-wrap;margin:12px 0 0;">${bodyText}</p>
+              </div>
+            </details>
+          `;
+        }).join("");
+      } catch (e) {
+        wrap.className = "blog-loading";
+        wrap.textContent = "We are working on this, come back soon!";
+      }
+    }
+
+    loadBlog();
+  </script>
 </body>
 </html>
